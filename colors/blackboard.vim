@@ -50,7 +50,7 @@ if has("gui_running")
 
   "Invisible character colors
   highlight NonText guifg=#4a4a59
-  highlight SpecialKey guifg=#4a4a59
+  highlight SpecialKey guifg=#B1B1BE
 
   "HTML Colors
   highlight link htmlTag Type
