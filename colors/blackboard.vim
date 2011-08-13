@@ -40,7 +40,7 @@ if has("gui_running")
   highlight Comment guifg=#AEAEAE
   highlight Constant guifg=#D8FA3C
   highlight Keyword guifg=#FFDE00
-  highlight String guifg=#61CE3C
+  highlight String guifg=#61CE3C guibg=#0d1d07
   highlight Type guifg=#84A7C1
   highlight Identifier guifg=#61CE3C gui=NONE
   highlight Function guifg=#FF5600 gui=NONE
