@@ -8,7 +8,6 @@
 let s:foreground = "c5c8c6"
 let s:background = "1d1f21"
 let s:selection = "373b41"
-let s:line = "232529"
 let s:comment = "969896"
 let s:red = "cc6666"
 let s:orange = "de935f"
@@ -16,7 +15,16 @@ let s:yellow = "f0c674"
 let s:green = "b5bd68"
 let s:blue = "81a2be"
 let s:purple = "b294bb"
-let s:margin = "1f2124"
+
+if has("gui_macvim")
+  let s:line = "232529"
+  let s:margin = "1f2124"
+endif
+
+if has("gui_gtk2")
+  let s:line = "2D2F34"
+  let s:margin = "1f2124"
+endif
 
 " Console 256 Colours
 if !has("gui_running")
