@@ -3,7 +3,6 @@
 "
 " Hex colour conversion functions borrowed from the theme "Desert256""
 
-let g:colors_name = "Tomorrow-Night"
 
 " Default GUI Colours
 let s:foreground = "c5c8c6"
@@ -29,6 +28,7 @@ end
 set background=dark
 hi clear
 syntax reset
+let g:colors_name = "Tomorrow-Night"
 
 if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	" Returns an approximate grey index for the given grey level
@@ -261,7 +261,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Standard Highlighting
 	call <SID>X("Comment", s:comment, "", "")
-	call <SID>X("ColorColumn", s:margin, "", "")
+	call <SID>X("ColorColumn", "", s:margin, "")
 	call <SID>X("Todo", s:comment, "", "")
 	call <SID>X("Title", s:comment, "", "")
 	call <SID>X("Identifier", s:red, "", "none")
