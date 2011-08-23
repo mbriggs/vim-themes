@@ -17,6 +17,7 @@ let s:yellow = "f0c674"
 let s:green = "b5bd68"
 let s:blue = "81a2be"
 let s:purple = "b294bb"
+let s:margin = "151618"
 
 " Console 256 Colours
 if !has("gui_running")
@@ -260,6 +261,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Standard Highlighting
 	call <SID>X("Comment", s:comment, "", "")
+	call <SID>X("ColorColumn", s:margin, "", "")
 	call <SID>X("Todo", s:comment, "", "")
 	call <SID>X("Title", s:comment, "", "")
 	call <SID>X("Identifier", s:red, "", "none")
