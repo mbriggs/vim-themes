@@ -5,9 +5,7 @@
 
 " Default GUI Colours
 let s:foreground = "c5c8c6"
-let s:dark_foreground = "3a3e42"
 let s:background = "1d1f21"
-let s:dark_background = "181a1c"
 let s:selection = "373b41"
 let s:comment = "969896"
 let s:red = "cc6666"
@@ -21,11 +19,15 @@ let s:purple = "b294bb"
 if has("gui_macvim")
   let s:line = "232529"
   let s:margin = "1f2124"
+  let s:dark_background = "181a1c"
+  let s:dark_foreground = "3a3e42"
 endif
 
 if has("gui_gtk2")
   let s:line = "2D2F34"
   let s:margin = "1f2124"
+  let s:dark_background = "181a1c"
+  let s:dark_foreground = "5A6066"
 endif
 
 " Console 256 Colours
