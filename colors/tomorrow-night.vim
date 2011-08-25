@@ -3,17 +3,19 @@
 "
 " Hex colour conversion functions borrowed from the theme "Desert256""
 
-
 " Default GUI Colours
 let s:foreground = "c5c8c6"
+let s:dark_foreground = "3a3e42"
 let s:background = "1d1f21"
+let s:dark_background = "181a1c"
 let s:selection = "373b41"
-let s:line = "232529"
+let s:line = "282a2e"
 let s:comment = "969896"
 let s:red = "cc6666"
 let s:orange = "de935f"
 let s:yellow = "f0c674"
 let s:green = "b5bd68"
+let s:aqua = "8abeb7"
 let s:blue = "81a2be"
 let s:purple = "b294bb"
 let s:margin = "1f2124"
@@ -28,6 +30,7 @@ end
 set background=dark
 hi clear
 syntax reset
+
 let g:colors_name = "Tomorrow-Night"
 
 if has("gui_running") || &t_Co == 88 || &t_Co == 256
@@ -240,7 +243,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Vim Highlighting
 	call <SID>X("Normal", s:foreground, s:background, "")
-	call <SID>X("LineNr", s:foreground, "", "")
+	call <SID>X("LineNr", s:dark_foreground, s:dark_background, "")
 	call <SID>X("NonText", s:selection, "", "")
 	call <SID>X("SpecialKey", s:selection, "", "")
 	call <SID>X("Search", s:background, s:yellow, "")
@@ -260,8 +263,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	end
 
 	" Standard Highlighting
+  if has("gui_running")
+    call <SID>X("ColorColumn", "", s:margin, "")
+  end
 	call <SID>X("Comment", s:comment, "", "")
-	call <SID>X("ColorColumn", "", s:margin, "")
 	call <SID>X("Todo", s:comment, "", "")
 	call <SID>X("Title", s:comment, "", "")
 	call <SID>X("Identifier", s:red, "", "none")
@@ -274,7 +279,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("String", s:green, "", "")
 	call <SID>X("Special", s:foreground, "", "")
 	call <SID>X("PreProc", s:purple, "", "")
-	call <SID>X("Operator", s:foreground, "", "none")
+	call <SID>X("Operator", s:aqua, "", "none")
 	call <SID>X("Type", s:blue, "", "none")
 	call <SID>X("Define", s:purple, "", "none")
 	call <SID>X("Include", s:blue, "", "") 
@@ -298,10 +303,23 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	" Ruby Highlighting
 	call <SID>X("rubySymbol", s:green, "", "")
 	call <SID>X("rubyConstant", s:yellow, "", "")
+	call <SID>X("rubyConditional", s:purple, "", "bold")
 	call <SID>X("rubyAttribute", s:blue, "", "")
 	call <SID>X("rubyInclude", s:blue, "", "")
 	call <SID>X("rubyLocalVariableOrMethod", s:orange, "", "")
 	call <SID>X("rubyCurlyBlock", s:orange, "", "")
+
+	" Python Highlighting
+	call <SID>X("pythonInclude", s:purple, "", "")
+	call <SID>X("pythonStatement", s:purple, "", "")
+	call <SID>X("pythonConditional", s:purple, "", "")
+	
+	" JavaScript Highlighting
+	call <SID>X("javaScriptBraces", s:foreground, "", "")
+	call <SID>X("javaScriptFunction", s:purple, "", "")
+	call <SID>X("javaScriptConditional", s:purple, "", "")
+	call <SID>X("javaScriptNumber", s:orange, "", "")
+	call <SID>X("javaScriptMember", s:orange, "", "")	
 
 	" Delete Functions
 	delf <SID>X
@@ -314,3 +332,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	delf <SID>grey_level
 	delf <SID>grey_number
 endif
+
+
+
+
