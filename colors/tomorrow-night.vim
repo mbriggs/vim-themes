@@ -17,14 +17,14 @@ let s:blue = "81a2be"
 let s:purple = "b294bb"
 
 if has("gui_macvim")
-  let s:line = "232529"
+  " let s:line = "232529"
   let s:margin = "1f2124"
   let s:dark_background = "181a1c"
   let s:dark_foreground = "3a3e42"
 endif
 
 if has("gui_gtk2")
-  let s:line = "2D2F34"
+  " let s:line = "2D2F34"
   let s:margin = "24262a"
   let s:dark_background = "181a1c"
   let s:dark_foreground = "656c73"
@@ -33,7 +33,7 @@ endif
 " Console 256 Colours
 if !has("gui_running")
 	let s:background = "303030"
-	let s:line = "3a3a3a"
+	" let s:line = "3a3a3a"
 	let s:selection = "585858"
 end
 
@@ -267,8 +267,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Question", s:green, "", "")
 	call <SID>X("WarningMsg", s:red, "", "")
 	if version >= 700
-		call <SID>X("CursorLine", "", s:line, "none")
-		call <SID>X("CursorColumn", "", s:line, "none")
+		" call <SID>X("CursorLine", "", s:line, "none")
+		" call <SID>X("CursorColumn", "", s:line, "none")
 		call <SID>X("PMenu", s:foreground, s:selection, "none")
 		call <SID>X("PMenuSel", s:foreground, s:selection, "reverse")
 	end
