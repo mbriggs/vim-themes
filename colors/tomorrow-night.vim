@@ -277,7 +277,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   if has("gui_running")
     call <SID>X("ColorColumn", "", s:margin, "")
   end
-	call <SID>X("Cursor", s:red, "", "")
+	call <SID>X("Cursor", s:foreground, s:red, "")
 	call <SID>X("Comment", s:comment, "", "")
 	call <SID>X("Todo", s:comment, "", "")
 	call <SID>X("Title", s:comment, "", "")
