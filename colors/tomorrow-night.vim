@@ -26,7 +26,7 @@ endif
 
 if has("gui_gtk2")
   let s:margin = "24262a"
-  let s:dark_red = "BF4040"
+  let s:dark_red = "862D2D"
   let s:dark_background = "181a1c"
   let s:dark_foreground = "656c73"
 endif
