@@ -7,6 +7,7 @@
 let s:foreground = "c5c8c6"
 let s:background = "1d1f21"
 let s:selection = "373b41"
+let s:line = "282a2e"
 let s:comment = "969896"
 let s:red = "cc6666"
 let s:orange = "de935f"
@@ -17,14 +18,12 @@ let s:blue = "81a2be"
 let s:purple = "b294bb"
 
 if has("gui_macvim")
-  " let s:line = "232529"
   let s:margin = "1f2124"
   let s:dark_background = "181a1c"
   let s:dark_foreground = "3a3e42"
 endif
 
 if has("gui_gtk2")
-  " let s:line = "2D2F34"
   let s:margin = "24262a"
   let s:dark_background = "181a1c"
   let s:dark_foreground = "656c73"
@@ -33,7 +32,7 @@ endif
 " Console 256 Colours
 if !has("gui_running")
 	let s:background = "303030"
-	" let s:line = "3a3a3a"
+	let s:line = "3a3a3a"
 	let s:selection = "585858"
 end
 
@@ -257,7 +256,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("NonText", s:selection, "", "")
 	call <SID>X("SpecialKey", s:selection, "", "")
 	call <SID>X("Search", s:background, s:yellow, "")
-	call <SID>X("IncSearch", s:background, s:yellow, "bold")
+	call <SID>X("TabLine", s:foreground, s:background, "reverse")
 	call <SID>X("StatusLine", s:foreground, s:background, "reverse")
 	call <SID>X("StatusLineNC", s:foreground, s:background, "reverse")
 	call <SID>X("Visual", "", s:selection, "")
@@ -267,17 +266,15 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Question", s:green, "", "")
 	call <SID>X("WarningMsg", s:red, "", "")
 	if version >= 700
-		" call <SID>X("CursorLine", "", s:line, "none")
-		" call <SID>X("CursorColumn", "", s:line, "none")
+		call <SID>X("CursorLine", "", s:line, "none")
+		call <SID>X("CursorColumn", "", s:line, "none")
 		call <SID>X("PMenu", s:foreground, s:selection, "none")
 		call <SID>X("PMenuSel", s:foreground, s:selection, "reverse")
 	end
 
 	" Standard Highlighting
-  if has("gui_running")
-    call <SID>X("ColorColumn", "", s:margin, "")
-  end
 	call <SID>X("Cursor", s:dark_foreground, s:red, "")
+	call <SID>X("Comment", s:comment, "", "")
 	call <SID>X("Comment", s:comment, "", "")
 	call <SID>X("Todo", s:comment, "", "")
 	call <SID>X("Title", s:comment, "", "")
@@ -315,7 +312,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	" Ruby Highlighting
 	call <SID>X("rubySymbol", s:green, "", "")
 	call <SID>X("rubyConstant", s:yellow, "", "")
-	call <SID>X("rubyConditional", s:purple, "", "bold")
 	call <SID>X("rubyAttribute", s:blue, "", "")
 	call <SID>X("rubyInclude", s:blue, "", "")
 	call <SID>X("rubyLocalVariableOrMethod", s:orange, "", "")
@@ -325,11 +321,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("pythonInclude", s:purple, "", "")
 	call <SID>X("pythonStatement", s:purple, "", "")
 	call <SID>X("pythonConditional", s:purple, "", "")
+	call <SID>X("pythonFunction", s:blue, "", "")
 	
 	" JavaScript Highlighting
 	call <SID>X("javaScriptBraces", s:foreground, "", "")
 	call <SID>X("javaScriptFunction", s:purple, "", "")
 	call <SID>X("javaScriptConditional", s:purple, "", "")
+	call <SID>X("javaScriptRepeat", s:purple, "", "")
 	call <SID>X("javaScriptNumber", s:orange, "", "")
 	call <SID>X("javaScriptMember", s:orange, "", "")	
 
