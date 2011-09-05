@@ -19,12 +19,14 @@ let s:purple = "b294bb"
 
 if has("gui_macvim")
   let s:margin = "1f2124"
+  let s:dark_red = "BF4040"
   let s:dark_background = "181a1c"
   let s:dark_foreground = "3a3e42"
 endif
 
 if has("gui_gtk2")
   let s:margin = "24262a"
+  let s:dark_red = "BF4040"
   let s:dark_background = "181a1c"
   let s:dark_foreground = "656c73"
 endif
@@ -273,7 +275,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	end
 
 	" Standard Highlighting
-	call <SID>X("Cursor", s:dark_foreground, s:red, "")
+	call <SID>X("Cursor", s:dark_foreground, s:dark_red, "")
 	call <SID>X("Comment", s:comment, "", "")
 	call <SID>X("Comment", s:comment, "", "")
 	call <SID>X("Todo", s:comment, "", "")
