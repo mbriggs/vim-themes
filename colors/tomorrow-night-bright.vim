@@ -5,7 +5,6 @@
 
 " Default GUI Colours
 let s:foreground = "eaeaea"
-let s:background = "000000"
 let s:selection = "424242"
 let s:line = "2a2a2a"
 let s:comment = "969896"
@@ -22,6 +21,24 @@ hi clear
 syntax reset
 
 let g:colors_name = "Tomorrow-Night-Bright"
+
+" my colors
+let s:background = "1d1f21"
+
+if has("gui_macvim")
+  let s:margin = "1f2124"
+  let s:dark_red = "862D2D"
+  let s:white = "FFFFFF"
+  let s:dark_background = "181a1c"
+  let s:dark_foreground = "3a3e42"
+endif
+
+if has("gui_gtk2")
+  let s:margin = "24262a"
+  let s:dark_red = "862D2D"
+  let s:dark_background = "181a1c"
+  let s:dark_foreground = "656c73"
+endif
 
 if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	" Returns an approximate grey index for the given grey level
@@ -231,9 +248,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 		endif
 	endfun
 
+  " added by me
+	call <SID>X("LineNr", s:dark_foreground, s:dark_background, "")
+	call <SID>X("ColorColumn", "", s:margin, "")
+	call <SID>X("rubyConditional", s:foreground, "", "bold")
+
 	" Vim Highlighting
 	call <SID>X("Normal", s:foreground, s:background, "")
-	call <SID>X("LineNr", s:foreground, "", "")
 	call <SID>X("NonText", s:selection, "", "")
 	call <SID>X("SpecialKey", s:selection, "", "")
 	call <SID>X("Search", s:background, s:yellow, "")
