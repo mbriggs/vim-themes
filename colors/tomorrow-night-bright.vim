@@ -252,6 +252,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("LineNr", s:dark_foreground, s:dark_background, "")
 	call <SID>X("ColorColumn", "", s:margin, "")
 	call <SID>X("rubyConditional", s:foreground, "", "bold")
+	call <SID>X("coffeeConditional", s:foreground, "", "bold")
 
 	" Vim Highlighting
 	call <SID>X("Normal", s:foreground, s:background, "")
