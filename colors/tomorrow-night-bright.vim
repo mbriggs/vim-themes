@@ -248,11 +248,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 		endif
 	endfun
 
-  " added by me
-	call <SID>X("LineNr", s:dark_foreground, s:dark_background, "")
-	call <SID>X("ColorColumn", "", s:margin, "")
-	call <SID>X("rubyConditional", s:foreground, "", "bold")
-	call <SID>X("coffeeConditional", s:foreground, "", "bold")
 
 	" Vim Highlighting
 	call <SID>X("Normal", s:foreground, s:background, "")
@@ -265,7 +260,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Visual", "", s:selection, "")
 	call <SID>X("Directory", s:blue, "", "")
 	call <SID>X("ModeMsg", s:green, "", "")
-    call <SID>X("MoreMsg", s:green, "", "")
+  call <SID>X("MoreMsg", s:green, "", "")
 	call <SID>X("Question", s:green, "", "")
 	call <SID>X("WarningMsg", s:red, "", "")
 	if version >= 700
@@ -331,6 +326,26 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("javaScriptRepeat", s:purple, "", "")
 	call <SID>X("javaScriptNumber", s:orange, "", "")
 	call <SID>X("javaScriptMember", s:orange, "", "")	
+
+  " added by me
+	call <SID>X("LineNr", s:dark_foreground, s:dark_background, "")
+	call <SID>X("ColorColumn", "", s:margin, "")
+	call <SID>X("rubyConditional", s:foreground, "", "bold")
+	call <SID>X("coffeeConditional", s:foreground, "", "bold")
+	call <SID>X("hamlTag", s:yellow, "", "bold")
+	call <SID>X("hamlIdChar", s:yellow, "", "")
+	call <SID>X("hamlRubyOutputChar", s:foreground, "", "bold")
+	call <SID>X("rubyInterpolationDelimiter", s:orange, "", "")
+	call <SID>X("rubyStringDelimiter", s:red, "", "bold")
+	call <SID>X("rubySymbol", s:blue, "", "")
+	call <SID>X("rubyKeyword", s:aqua, "", "")
+	call <SID>X("rubyRegexpAnchor", s:orange, "", "")
+	call <SID>X("rubyRegexpSpecial", s:aqua, "", "")
+	call <SID>X("cucumberGiven", s:yellow, "", "")
+	call <SID>X("cucumberWhen", s:orange, "", "")
+	call <SID>X("cucumberThen", s:aqua, "", "")
+	call <SID>X("cucumberUnparsed", s:comment, "", "")
+	call <SID>X("cucumberTags", s:red, "", "")
 
 	" Delete Functions
 	delf <SID>X
