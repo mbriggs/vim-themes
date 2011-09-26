@@ -327,6 +327,17 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("javaScriptNumber", s:orange, "", "")
 	call <SID>X("javaScriptMember", s:orange, "", "")	
 
+	" Delete Functions
+	delf <SID>X
+	delf <SID>rgb
+	delf <SID>colour
+	delf <SID>rgb_colour
+	delf <SID>rgb_level
+	delf <SID>rgb_number
+	delf <SID>grey_colour
+	delf <SID>grey_level
+	delf <SID>grey_number
+
   " added by me
 	call <SID>X("LineNr", s:dark_foreground, s:dark_background, "")
 	call <SID>X("ColorColumn", "", s:margin, "")
@@ -346,15 +357,4 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("cucumberThen", s:aqua, "", "")
 	call <SID>X("cucumberUnparsed", s:comment, "", "")
 	call <SID>X("cucumberTags", s:red, "", "")
-
-	" Delete Functions
-	delf <SID>X
-	delf <SID>rgb
-	delf <SID>colour
-	delf <SID>rgb_colour
-	delf <SID>rgb_level
-	delf <SID>rgb_number
-	delf <SID>grey_colour
-	delf <SID>grey_level
-	delf <SID>grey_number
 endif
