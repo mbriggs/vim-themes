@@ -1,6 +1,8 @@
 " Tomorrow Night Bright - Full Colour and 256 Colour
 " http://chriskempson.com
 "
+" lots of mods my matt briggs
+"
 " Hex colour conversion functions borrowed from the theme "Desert256""
 
 " Default GUI Colours
@@ -24,11 +26,11 @@ let g:colors_name = "Tomorrow-Night-Bright"
 
 " my colors
 let s:background = "1d1f21"
+let s:bright = "FFFFFF"
 
 if has("gui_macvim")
   let s:margin = "1f2124"
   let s:dark_red = "862D2D"
-  let s:white = "FFFFFF"
   let s:dark_background = "181a1c"
   let s:dark_foreground = "3a3e42"
 endif
@@ -253,7 +255,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Normal", s:foreground, s:background, "")
 	call <SID>X("NonText", s:selection, "", "")
 	call <SID>X("SpecialKey", s:selection, "", "")
-	call <SID>X("Search", s:background, s:yellow, "")
+	call <SID>X("Search", s:yellow, s:selection, "underline")
 	call <SID>X("TabLine", s:foreground, s:background, "reverse")
 	call <SID>X("StatusLine", s:foreground, s:background, "reverse")
 	call <SID>X("StatusLineNC", s:foreground, s:background, "reverse")
@@ -327,17 +329,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("javaScriptNumber", s:orange, "", "")
 	call <SID>X("javaScriptMember", s:orange, "", "")	
 
-	" Delete Functions
-	delf <SID>X
-	delf <SID>rgb
-	delf <SID>colour
-	delf <SID>rgb_colour
-	delf <SID>rgb_level
-	delf <SID>rgb_number
-	delf <SID>grey_colour
-	delf <SID>grey_level
-	delf <SID>grey_number
-
   " added by me
 	call <SID>X("LineNr", s:dark_foreground, s:dark_background, "")
 	call <SID>X("ColorColumn", "", s:margin, "")
@@ -357,4 +348,15 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("cucumberThen", s:aqua, "", "")
 	call <SID>X("cucumberUnparsed", s:comment, "", "")
 	call <SID>X("cucumberTags", s:red, "", "")
+
+	" Delete Functions
+	delf <SID>X
+	delf <SID>rgb
+	delf <SID>colour
+	delf <SID>rgb_colour
+	delf <SID>rgb_level
+	delf <SID>rgb_number
+	delf <SID>grey_colour
+	delf <SID>grey_level
+	delf <SID>grey_number
 endif
